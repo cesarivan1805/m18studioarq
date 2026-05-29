@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M18 Studio | Arquitectura de Lujo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400&family=Playfair+Display:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav id="navbar" class="fixed w-full z-50 py-4 px-6 transition-all duration-300">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex flex-col">
+                <span class="text-xl font-light tracking-[0.4em] uppercase">M18</span>
+                <span class="text-[8px] tracking-[0.5em] uppercase text-gold">Studio Architecture</span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-[10px] uppercase tracking-widest items-center">
+                <a href="#proyectos" class="hover:text-gold transition">Proyectos</a>
+                <button onclick="toggleModal()" class="bg-gold text-black px-6 py-2 font-bold hover:bg-white transition">Cotizar</button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="h-screen flex items-center justify-center hero-bg text-center px-6">
+        <div class="reveal">
+            <h1 class="text-5xl md:text-7xl mb-8 font-light">Diseño que <span class="italic text-gold">trasciende.</span></h1>
+            <a href="#proyectos" class="inline-block border border-gold px-10 py-4 uppercase text-[10px] tracking-widest hover:bg-gold hover:text-black transition">Explorar</a>
+        </div>
+    </section>
+
+    <section id="proyectos" class="py-20 max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="reveal card-proyecto">
+                <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800" alt="Proyecto 1">
+                <div class="p-6"><h3>Casa Lesslight</h3></div>
+            </div>
+            <div class="reveal card-proyecto">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800" alt="Proyecto 2">
+                <div class="p-6"><h3>Residencia Aristeo</h3></div>
+            </div>
+        </div>
+    </section>
+
+    <div id="quote-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h3 class="text-2xl font-serif mb-4 text-gold">Solicitar Presupuesto</h3>
+            <form class="space-y-4" onsubmit="event.preventDefault(); alert('¡Gracias! Te contactaremos pronto.'); toggleModal();">
+                <input type="text" placeholder="Tu Nombre" class="input-form">
+                <input type="email" placeholder="Tu Email" class="input-form">
+                <button type="submit" class="btn-submit">Enviar Solicitud</button>
+                <button type="button" onclick="toggleModal()" class="text-xs text-gray-500 w-full mt-4">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
